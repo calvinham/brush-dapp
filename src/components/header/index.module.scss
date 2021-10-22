@@ -1,23 +1,20 @@
 .header {
-  width: 100%;
+  position: absolute;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
+  top: 60px;
+  left: 0;
+  right: 0;
+  z-index: 2;
 
-  border: 1px solid black;
-  padding-left: 30px;
-  padding-right: 30px;
-  padding-top: 20px;
-  padding-bottom: 20px;
-
-  .logoContainer {
+  .logoRow {
     display: flex;
-    border: 1px solid black;
-    border-radius: 10px;
-    align-items: center;
+    flex-direction: row;
+
     .title {
-      font-size: 18px;
-      padding: 5px;
+      font-size: 2rem;
+      font-weight: 500;
     }
   }
 
@@ -26,21 +23,29 @@
     flex-direction: row;
 
     .icon {
-      padding-left: 7px;
-      padding-right: 7px;
-      width: 45px;
-      height: 45px;
-    }
-  }
+      display: block;
+      justify-content: center;
+      align-items: center;
+      width: 44px;
+      height: 44px;
+      padding: 10px;
 
-  .walletContainer {
-    display: flex;
-    border: 1px solid black;
-    border-radius: 10px;
-    align-items: center;
+      border: 1px solid black;
+      margin-right: 15px;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
     .wallet {
+      padding: 10px 20px;
       font-size: 18px;
-      padding: 5px;
+      border: 1px solid black;
+
+      &:hover {
+        cursor: pointer;
+      }
     }
   }
 }

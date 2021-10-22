@@ -1,0 +1,21 @@
+.container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+
+  .bodyContainer {
+    .enterAppButton {
+      background-color: white;
+      border: 1px solid black;
+      top: 50%;
+      position: relative;
+      padding: 20px 50px;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
