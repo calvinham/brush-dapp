@@ -9,10 +9,8 @@ export const FrontPageBody = () => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.bodyContainer}>
-        <div className={styles.enterAppButton} onClick={handleButtonTap}>
-          enter canvas
-        </div>
+      <div className={styles.enterAppButton} onClick={handleButtonTap}>
+        enter canvas
       </div>
     </div>
   );

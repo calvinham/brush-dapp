@@ -5,16 +5,18 @@ import {
   Route,
   Switch,
 } from 'react-router-dom';
-import { Home } from '../../pages/home/index';
+import { Main } from '../../pages/main/index';
 import { Canvas } from '../../pages/canvas/index';
+import { selectWallet } from '../../state/reducers/selectors';
+import { useSelector } from 'react-redux';
 
 const App = () => {
-  const [isAuthed, setIsAuthed] = useState<Boolean>(false);
+  const wallet = useSelector(selectWallet);
 
   return (
     <BrowserRouter>
-      <Route path="/" component={Home} exact />
-      <Route path="/canvas" component={Canvas} exact />
+      <Route path="/" component={Main} exact />
+      {wallet !== '' ? <Route path="/canvas" component={Canvas} exact /> : null}
     </BrowserRouter>
   );
 };

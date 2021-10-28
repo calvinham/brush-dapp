@@ -1,21 +1,20 @@
-.container {
+.buttonContainer {
   position: relative;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
+  z-index: inherit;
 
-  .bodyContainer {
-    .enterAppButton {
-      background-color: white;
-      border: 1px solid black;
-      top: 50%;
-      position: relative;
-      padding: 20px 50px;
+  .enterAppButton {
+    background-color: white;
+    border: 1px solid black;
+    top: 50%;
+    position: relative;
+    padding: 20px 50px;
 
-      &:hover {
-        cursor: pointer;
-      }
+    &:hover {
+      cursor: pointer;
     }
   }
 }
