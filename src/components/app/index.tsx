@@ -16,7 +16,7 @@ const App = () => {
   return (
     <BrowserRouter>
       <Route path="/" component={Main} exact />
-      {wallet !== '' ? <Route path="/canvas" component={Canvas} exact /> : null}
+      <Route path="/canvas" component={Canvas} exact />
     </BrowserRouter>
   );
 };

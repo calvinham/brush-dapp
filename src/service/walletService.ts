@@ -17,17 +17,6 @@ export const connectWallet = async (): Promise<string> => {
   }
 };
 
-export const eagerConnect = async (): Promise<string> =>
-  getProvider()
-    .then(async (provider) => {
-      const accounts = await provider.listAccounts();
-      return accounts[0] !== undefined ? accounts[0] : '';
-    })
-    .catch((error) => {
-      console.log('error: ', error);
-      return '';
-    });
-
 export const getCurrentWalletAddress = async (): Promise<
   string[] | undefined
 > => {

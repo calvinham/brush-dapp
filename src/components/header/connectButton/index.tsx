@@ -4,12 +4,9 @@ import { setWallet } from '../../../action/appActions';
 import { selectWallet } from '../../../state/reducers/selectors';
 import {
   connectWallet,
-  eagerConnect,
   getCurrentWalletAddress,
-  getProvider,
 } from '../../../service/walletService';
 import styles from './index.module.scss';
-import { join } from 'path/posix';
 
 export const ConnectWalletButton = () => {
   const dispatch = useDispatch();
@@ -22,8 +19,12 @@ export const ConnectWalletButton = () => {
   };
 
   const initiateEagerConnect = async () => {
-    const account = await eagerConnect();
-    dispatch(setWallet(account));
+    const accounts = await getCurrentWalletAddress();
+    if (accounts) {
+      if (accounts.length !== 0) {
+        dispatch(setWallet(accounts[0]));
+      }
+    }
   };
 
   const handleWalletChangeEvent = async () => {
