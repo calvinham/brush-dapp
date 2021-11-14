@@ -1,23 +1,41 @@
-import React, { useState } from 'react';
-import {
-  BrowserRouter,
-  BrowserRouter as Router,
-  Route,
-  Switch,
-} from 'react-router-dom';
-import { Main } from '../../pages/main/index';
-import { Canvas } from '../../pages/canvas/index';
-import { selectWallet } from '../../state/reducers/selectors';
-import { useSelector } from 'react-redux';
+import React, { useEffect, useRef, useState } from 'react';
+import { Header } from '../header';
+import { Landing } from '../landing';
+import styles from './index.module.scss';
+import { debounce } from '../../util/debounce';
+import { useDispatch } from 'react-redux';
 
 const App = () => {
-  const wallet = useSelector(selectWallet);
+  const canvasRef = useRef<HTMLDivElement | null>(null);
+  const [shouldScroll, setShouldScroll] = useState<boolean>(false);
+  const handleToggleShouldScroll = () => {
+    setShouldScroll(false);
+  };
+
+  const debouncedSetShouldScroll = debounce(handleToggleShouldScroll, 500);
+
+  const executeScroll = () => {
+    if (canvasRef.current && shouldScroll) {
+      canvasRef.current.scrollIntoView({ behavior: 'smooth' });
+      debouncedSetShouldScroll();
+    }
+  };
+
+  useEffect(() => {
+    if (shouldScroll) {
+      executeScroll();
+    }
+  }, [shouldScroll]);
 
   return (
-    <BrowserRouter>
-      <Route path="/" component={Main} exact />
-      <Route path="/canvas" component={Canvas} exact />
-    </BrowserRouter>
+    <div className={styles.appContainer}>
+      <Header />
+      <Landing shouldScroll={shouldScroll} setShouldScroll={setShouldScroll} />
+
+      <div ref={canvasRef} className={styles.canvasContainer}>
+        canvas
+      </div>
+    </div>
   );
 };
 

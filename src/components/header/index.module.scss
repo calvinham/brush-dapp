@@ -1,50 +1,75 @@
 .header {
-  position: absolute;
+  box-sizing: border-box;
+  position: fixed;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  top: 60px;
-  left: 0;
-  right: 0;
+  background-color: white;
+  width: 100%;
+  height: 100px;
+  top: 0;
+  transition: all 0.4s;
+  padding: 20px;
 
   .logoRow {
     display: flex;
     flex-direction: row;
-
-    .title {
-      font-size: 2rem;
-      font-weight: 500;
-    }
-  }
-
-  .centerContainer {
-    display: flex;
-    flex-direction: row;
+    padding-right: 40px;
 
     .icon {
       display: block;
       justify-content: center;
       align-items: center;
+      box-sizing: border-box;
       width: 44px;
       height: 44px;
       padding: 10px;
-
-      border: 1px solid black;
       margin-right: 15px;
-
-      &:hover {
-        cursor: pointer;
-      }
-    }
-
-    .wallet {
-      padding: 10px 20px;
-      font-size: 18px;
-      border: 1px solid black;
+      opacity: 0.5;
 
       &:hover {
         cursor: pointer;
       }
     }
   }
+
+  .buttonContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    padding-left: 40px;
+
+    .headerLink {
+      opacity: 0.5;
+      margin-right: 15px;
+      font-size: 18px;
+    }
+
+    .rectangle {
+      padding: 8px 20px;
+      border-radius: 25px;
+      border: 1px solid black;
+      background-color: black;
+      opacity: 0.2;
+    }
+
+    .button {
+      padding: 10px 20px;
+      font-size: 18px;
+      border: 1px solid black;
+      opacity: 0.5;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.scrolled {
+  left: 0;
+  background-color: transparent;
+  transition: all 0.4s;
 }

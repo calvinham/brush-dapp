@@ -21,6 +21,7 @@ export const Grid = (props: Props) => {
   );
 
   const [cells, setCells] = useState(d);
+
   const updateCell = (index: number) => () => {
     setCells(
       cells.map((cell: CellItem, cellIndex: number) => {
