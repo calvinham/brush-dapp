@@ -6,7 +6,7 @@ import twitterLogo from '../../assets/twitter_logo_black.svg';
 import cx from 'classnames';
 
 import { useSelector } from 'react-redux';
-import { selectWallet } from '../../state/reducers/selectors';
+import { selectWallet } from '../../state/reducers/app/selectors';
 
 export const Header = () => {
   const wallet = useSelector(selectWallet);

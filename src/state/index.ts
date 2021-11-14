@@ -1,9 +1,11 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
-import { AppReducer } from './reducers/appReducer';
+import { AppReducer } from './reducers/app';
+import { CanvasReducer } from './reducers/canvas';
 
 export const store = configureStore({
   reducer: {
     app: AppReducer,
+    canvas: CanvasReducer,
   },
 });
 

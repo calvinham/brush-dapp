@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setWallet } from '../../action/appActions';
 import { AppService } from '../../service/app';
@@ -6,7 +6,7 @@ import {
   selectWallet,
   selectChainId,
   selectBrushId,
-} from '../../state/reducers/selectors';
+} from '../../state/reducers/app/selectors';
 import { LandingConnectWallet } from './connect-wallet';
 import styles from './index.module.scss';
 import { LandingBrushModal } from './mint-brush';
