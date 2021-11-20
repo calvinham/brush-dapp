@@ -1,5 +1,5 @@
 import { createSelector } from 'reselect';
-import { RootState } from '..';
+import { RootState } from '../..';
 
 export const selectWallet = (state: RootState) => state.app.walletId;
 

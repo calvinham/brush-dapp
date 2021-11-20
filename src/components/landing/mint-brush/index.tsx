@@ -9,7 +9,7 @@ import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
 import { createTheme } from '@mui/material';
 import { ThemeProvider } from '@mui/private-theming';
-import { selectBrushId } from '../../../state/reducers/selectors';
+import { selectBrushId } from '../../../state/reducers/app/selectors';
 
 export const LandingBrushModal = () => {
   const [isMinting, setIsMinting] = useState<boolean>(false);

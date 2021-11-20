@@ -5,7 +5,7 @@ import {
   setBrush,
   setChain,
   setWallet,
-} from '../../action/appActions';
+} from '../../../action/appActions';
 
 interface AppState {
   loading: number;

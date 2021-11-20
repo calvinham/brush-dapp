@@ -4,6 +4,7 @@ import { Landing } from '../landing';
 import styles from './index.module.scss';
 import { debounce } from '../../util/debounce';
 import { useDispatch } from 'react-redux';
+import { Canvas } from '../canvas';
 
 const App = () => {
   const canvasRef = useRef<HTMLDivElement | null>(null);
@@ -33,7 +34,7 @@ const App = () => {
       <Landing shouldScroll={shouldScroll} setShouldScroll={setShouldScroll} />
 
       <div ref={canvasRef} className={styles.canvasContainer}>
-        canvas
+        <Canvas />
       </div>
     </div>
   );
