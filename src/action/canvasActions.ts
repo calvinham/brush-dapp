@@ -10,3 +10,5 @@ export const setRows = createAction<number>('canvas/setRows');
 export const setColumns = createAction<number>('canvas/setColumns');
 
 export const setSelectedPixel = createAction<Pixel>('canvas/setSelectedPixel');
+
+export const setSelectedColor = createAction<string>('canvs/selectColor');

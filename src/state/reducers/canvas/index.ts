@@ -5,6 +5,7 @@ import {
   setPixels,
   setRows,
   setSelectedPixel,
+  setSelectedColor,
 } from '../../../action/canvasActions';
 import { Pixel } from '../../../components/model/interface/pixel';
 
@@ -15,6 +16,7 @@ export interface CanvasState {
   rows: number;
   columns: number;
   selectedPixel: Pixel;
+  selectedColor: string;
 }
 
 const initialState: CanvasState = {
@@ -29,6 +31,7 @@ const initialState: CanvasState = {
     color: '#ffffff',
     isTaken: false,
   },
+  selectedColor: '#ffffff',
 };
 
 export const CanvasReducer = createReducer(initialState, (canvas) => {
@@ -52,5 +55,9 @@ export const CanvasReducer = createReducer(initialState, (canvas) => {
     .addCase(setSelectedPixel, (state: CanvasState, { payload }) => ({
       ...state,
       selectedPixel: payload,
+    }))
+    .addCase(setSelectedColor, (state: CanvasState, { payload }) => ({
+      ...state,
+      selectedColor: payload,
     }));
 });

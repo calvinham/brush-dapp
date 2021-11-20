@@ -9,3 +9,6 @@ export const selectNumCols = (state: RootState) => state.canvas.columns;
 export const selectedPixel = (state: RootState) => state.canvas.selectedPixel;
 
 export const selectAllPixels = (state: RootState) => state.canvas.pixels;
+
+export const selectSelectedColor = (state: RootState) =>
+  state.canvas.selectedColor;
